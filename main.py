@@ -25,7 +25,7 @@ class Student():
 
 
 class Teacher():
-  def __init__(self, name:str, email:str):
+  def __init__(self, name:str, email:str) -> None:
     self.name = name
     self.email = email
 
@@ -41,7 +41,7 @@ class Teacher():
   
 
 class Schedule():
-  def __init__(self, name:str, classes:list[Class]):
+  def __init__(self, name:str, classes:list[Class]) -> None:
     self.name = name
     self.classes = classes
 
@@ -54,7 +54,7 @@ class Schedule():
   def __eq__(self, other) -> bool:
     return self.name == other.name and self.classes == other.classes
 
-  def update(self, newClass:Class, oldClass:Class):
+  def update(self, newClass:Class, oldClass:Class) -> None:
     for i in range(len(self.classes)):
       if self.classes[i].name == oldClass.name:
         self.classes[i] = newClass
