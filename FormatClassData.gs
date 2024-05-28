@@ -146,45 +146,45 @@ function addQuestionsToForm() {
 
     let period1 = form.addListItem();
     period1.setTitle('Select your 1st Period class')
-                .setChoices(
-          choicesArray
-          .map(x => period1.createChoice(x)));
+          .setChoices(
+            choicesArray
+            .map(x => period1.createChoice(x)));
 
     let period2 = form.addListItem();
     period2.setTitle('Select your 2nd Period class')
-                .setChoices(
-          choicesArray
-          .map(x => period2.createChoice(x)));
+          .setChoices(
+            choicesArray
+            .map(x => period2.createChoice(x)));
 
     let period3 = form.addListItem();
     period3.setTitle('Select your 3rd Period class')
-                .setChoices(
-          choicesArray
-          .map(x => period3.createChoice(x)));
+          .setChoices(
+            choicesArray
+            .map(x => period3.createChoice(x)));
 
     let period4 = form.addListItem();
     period4.setTitle('Select your 4th Period class')
-                .setChoices(
-          choicesArray
-          .map(x => period4.createChoice(x)));
+          .setChoices(
+            choicesArray
+            .map(x => period4.createChoice(x)));
 
     let period5 = form.addListItem();
     period5.setTitle('Select your 5th Period class')
-                .setChoices(
-          choicesArray
-          .map(x => period5.createChoice(x)));
+          .setChoices(
+            choicesArray
+            .map(x => period5.createChoice(x)));
 
     let period6 = form.addListItem();
     period6.setTitle('Select your 6th Period class')
-                .setChoices(
-          choicesArray
-          .map(x => period6.createChoice(x)));
+          .setChoices(
+            choicesArray
+            .map(x => period6.createChoice(x)));
 
     let periodB = form.addListItem();
     periodB.setTitle('Select your B Period class')
-                .setChoices(
-          choicesArray
-          .map(x => periodB.createChoice(x)));
+          .setChoices(
+            choicesArray
+            .map(x => periodB.createChoice(x)));
     
     let requestedClass = form.addListItem();
     requestedClass.setTitle('Select which class you would like to request')
