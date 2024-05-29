@@ -209,6 +209,7 @@ function invertRowAndColumns(array) {
     for (let r = 0; r < array.length; r++) {
       column.push(array[r][c]);
     }
+    Logger.log(column);
     tempArray.push(column);
     column = new Array;
   }
@@ -221,8 +222,36 @@ function removeDuplicates(arr) {
 
 function arrayAdd(first, second) {
   for (let i = 0; i < first.length; i++) {
-    second[i] = String(first[i] + ', Course ID: ' + second[i]);
+    second[i] = String(first[i] + ' - Course ID: ' + second[i]);
   }
   return second;
 }
 
+
+
+
+
+
+function onFormSubmit(e) {
+  let sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Form Responses 1");
+  let dataRange = sheet.getDataRange();
+  let data = dataRange.getDisplayValues();
+  
+  // Start from the second row (index 1 in JavaScript)
+  for (let i = 1; i < data.length; i++) {
+    for (let j = 0; j < data[i].length; j++) {
+      if (data[i][j] && data[i][j].includes('Course ID:')) {
+        let parts = data[i][j].split(', Course ID: ');
+        if (parts.length == 2) { // Ensure split is successful
+          let className = parts[0];
+          let courseID = parts[1];
+          data[i][j] = `${className} {${courseID}}`;
+        }
+      }
+    }
+  }
+  
+  // Write the updated data back to the sheet
+  let range = sheet.getRange(2, 1, data.length - 1, data[0].length);
+  range.setValues(data.slice(1));
+}
