@@ -241,7 +241,7 @@ function onFormSubmit(e) {
   for (let i = 1; i < data.length; i++) {
     for (let j = 0; j < data[i].length; j++) {
       if (data[i][j] && data[i][j].includes('Course ID:')) {
-        let parts = data[i][j].split(', Course ID: ');
+        let parts = data[i][j].split(' - Course ID: ');
         if (parts.length == 2) { // Ensure split is successful
           let className = parts[0];
           let courseID = parts[1];
